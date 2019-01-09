@@ -7,101 +7,56 @@
 //
 
 import UIKit
-import MaterialComponents.MaterialBottomNavigation
+import Firebase
+import GoogleSignIn
 
-class ViewController: UIViewController, MDCBottomNavigationBarDelegate {
+class ViewController: UIViewController, GIDSignInUIDelegate {
     
-    weak var bottomNavBar : MDCBottomNavigationBar!{
-        didSet{
-            bottomNavBar.delegate = self
-        }
-    }
+    let signInButton: GIDSignInButton = {
+        let signIn = GIDSignInButton()
+        signIn.translatesAutoresizingMaskIntoConstraints = false
+        signIn.style = GIDSignInButtonStyle.standard
+        return signIn
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        commonBottomNavigationTypicalUseExampleViewDidLoad()
-//        self.view.backgroundColor = self.colorScheme.backgroundColor
-
+        GIDSignIn.sharedInstance().uiDelegate = self
+        let firebaseAuth = Auth.auth()
+        
+        if (firebaseAuth.currentUser != nil) {
+            do {
+                try firebaseAuth.signOut()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(didSignIn), name: NSNotification.Name("SuccessfulSignInNotification"), object: nil)
+  
+    }
+    
+    @objc func didSignIn()  {
+        let homeViewController = HomeViewController()
+        self.present(homeViewController, animated: true, completion: nil)        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        layoutBottomNavBar()
+        self.view.addSubview(signInButton)
+        setupLayout()
     }
     
-    override func viewSafeAreaInsetsDidChange() {
-        if #available(iOS 11.0, *) {
-            super.viewSafeAreaInsetsDidChange()
-        }
-        layoutBottomNavBar()
+    private func setupLayout() {
+        NSLayoutConstraint.activate([
+//            signInButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16.0),
+            signInButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            signInButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+//            signInButton.widthAnchor.constraint(equalTo: view.widthAnchor),
+//            signInButton.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 9/16),
+            ])
     }
-
-    func commonBottomNavigationTypicalUseExampleViewDidLoad() {
-//
-//    _bottomNavBar = [[MDCBottomNavigationBar alloc] initWithFrame:CGRectZero];
-//    _bottomNavBar.titleVisibility = MDCBottomNavigationBarTitleVisibilitySelected;
-//    _bottomNavBar.alignment = MDCBottomNavigationBarAlignmentJustifiedAdjacentTitles;
-//    _bottomNavBar.delegate = self;
-//    [self.view addSubview:_bottomNavBar];
-//
-//    UITabBarItem *tabBarItem1 =
-//    [[UITabBarItem alloc] initWithTitle:@"Home"
-//    image:[UIImage imageNamed:@"Home"]
-//    tag:0];
-//    UITabBarItem *tabBarItem2 =
-//    [[UITabBarItem alloc] initWithTitle:@"Messages"
-//    image:[UIImage imageNamed:@"Email"]
-//    tag:0];
-//    UITabBarItem *tabBarItem3 =
-//    [[UITabBarItem alloc] initWithTitle:@"Favorites"
-//    image:[UIImage imageNamed:@"Favorite"]
-//    tag:0];
-//    UITabBarItem *tabBarItem4 =
-//    [[UITabBarItem alloc] initWithTitle:@"Search"
-//    image:[UIImage imageNamed:@"Search"]
-//    tag:0];
-//    tabBarItem4.badgeValue = @"88";
-//    UITabBarItem *tabBarItem5 =
-//    [[UITabBarItem alloc] initWithTitle:@"Birthday"
-//    image:[UIImage imageNamed:@"Cake"]
-//    tag:0];
-//    tabBarItem5.badgeValue = @"999+";
-//    #if defined(__IPHONE_10_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0)
-//    #pragma clang diagnostic push
-//    #pragma clang diagnostic ignored "-Wpartial-availability"
-//    if ([tabBarItem5 respondsToSelector:@selector(badgeColor)]) {
-//    tabBarItem5.badgeColor = [MDCPalette cyanPalette].accent700;
-//    }
-//    #pragma clang diagnostic pop
-//    #endif
-//    _bottomNavBar.items = @[ tabBarItem1, tabBarItem2, tabBarItem3, tabBarItem4, tabBarItem5 ];
-//    _bottomNavBar.selectedItem = tabBarItem2;
-//
-//    self.navigationItem.rightBarButtonItem =
-//    [[UIBarButtonItem alloc] initWithTitle:@"+Message"
-//    style:UIBarButtonItemStylePlain
-//    target:self
-//    action:@selector(updateBadgeItemCount)];
-//    self.navigationItem.rightBarButtonItem.accessibilityLabel = @"Add a message";
-//    self.navigationItem.rightBarButtonItem.accessibilityHint =
-//    @"Increases the badge on the \"Messages\" tab.";
-//    self.navigationItem.rightBarButtonItem.accessibilityIdentifier = @"messages-increment-badge";
-    }
-    
-    func layoutBottomNavBar() {
-//    CGSize size = [_bottomNavBar sizeThatFits:self.view.bounds.size];
-//    CGRect bottomNavBarFrame = CGRectMake(0,
-//    CGRectGetHeight(self.view.bounds) - size.height,
-//    size.width,
-//    size.height);
-//    _bottomNavBar.frame = bottomNavBarFrame;
-    }
-    
-    
-    //MARK: MDCBottomNavigationBarDelegate
-    
-    func bottomNavigationBar(_ bottomNavigationBar: MDCBottomNavigationBar, didSelect item: UITabBarItem) {
-        print("Selected Item:", item.title!)
-    }
-
 }

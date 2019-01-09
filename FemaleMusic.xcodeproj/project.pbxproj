@@ -12,6 +12,11 @@
 		B17EADCD21E4821C00F2FE01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EADCB21E4821C00F2FE01 /* ViewController.swift */; };
 		B17EADCE21E4821C00F2FE01 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17EADCC21E4821C00F2FE01 /* ViewController.xib */; };
 		B1C382FF21E5C12600083026 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1C382FE21E5C12600083026 /* GoogleService-Info.plist */; };
+		B1C3830221E5CEEB00083026 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830021E5CEEB00083026 /* HomeViewController.swift */; };
+		B1C3830521E619D300083026 /* WishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830421E619D300083026 /* WishlistTableViewController.swift */; };
+		B1C3830721E61B2700083026 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830621E61B2700083026 /* FindViewController.swift */; };
+		B1C3830921E629DA00083026 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830821E629DA00083026 /* CalenderViewController.swift */; };
+		B1C3830B21E62E3600083026 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830A21E62E3600083026 /* CreateViewController.swift */; };
 		B1E6A20D21E3B96C004DCBE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */; };
 		B1E6A21421E3B96D004DCBE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */; };
 		B1E6A21721E3B96D004DCBE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E6A21521E3B96D004DCBE2 /* LaunchScreen.storyboard */; };
@@ -38,6 +43,11 @@
 		B17EADCB21E4821C00F2FE01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B17EADCC21E4821C00F2FE01 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		B1C382FE21E5C12600083026 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B1C3830021E5CEEB00083026 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B1C3830421E619D300083026 /* WishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewController.swift; sourceTree = "<group>"; };
+		B1C3830621E61B2700083026 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
+		B1C3830821E629DA00083026 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		B1C3830A21E62E3600083026 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		B1E6A20921E3B96C004DCBE2 /* FemaleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FemaleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +124,11 @@
 				B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */,
 				B17EADCB21E4821C00F2FE01 /* ViewController.swift */,
 				B17EADCC21E4821C00F2FE01 /* ViewController.xib */,
+				B1C3830021E5CEEB00083026 /* HomeViewController.swift */,
+				B1C3830621E61B2700083026 /* FindViewController.swift */,
+				B1C3830421E619D300083026 /* WishlistTableViewController.swift */,
+				B1C3830821E629DA00083026 /* CalenderViewController.swift */,
+				B1C3830A21E62E3600083026 /* CreateViewController.swift */,
 				B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */,
 				B1E6A21521E3B96D004DCBE2 /* LaunchScreen.storyboard */,
 				B1E6A21821E3B96D004DCBE2 /* Info.plist */,
@@ -326,8 +341,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C3830921E629DA00083026 /* CalenderViewController.swift in Sources */,
+				B1C3830721E61B2700083026 /* FindViewController.swift in Sources */,
+				B1C3830B21E62E3600083026 /* CreateViewController.swift in Sources */,
 				B17EADCD21E4821C00F2FE01 /* ViewController.swift in Sources */,
 				B1E6A20D21E3B96C004DCBE2 /* AppDelegate.swift in Sources */,
+				B1C3830521E619D300083026 /* WishlistTableViewController.swift in Sources */,
+				B1C3830221E5CEEB00083026 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +505,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FemaleMusic/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaledaily.femalemusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -502,7 +525,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FemaleMusic/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaledaily.femalemusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -519,7 +545,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FemaleMusicTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaledaily.FemaleMusicTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -536,7 +566,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FemaleMusicTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.femaledaily.FemaleMusicTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
