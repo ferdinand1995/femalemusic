@@ -17,6 +17,9 @@
 		B1C3830721E61B2700083026 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830621E61B2700083026 /* FindViewController.swift */; };
 		B1C3830921E629DA00083026 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830821E629DA00083026 /* CalenderViewController.swift */; };
 		B1C3830B21E62E3600083026 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830A21E62E3600083026 /* CreateViewController.swift */; };
+		B1C3831621E6685900083026 /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3831421E6685900083026 /* FindTableViewCell.swift */; };
+		B1C3831721E6685900083026 /* FindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C3831521E6685900083026 /* FindTableViewCell.xib */; };
+		B1C3831921E66BD900083026 /* MusixMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3831821E66BD900083026 /* MusixMatchModel.swift */; };
 		B1E6A20D21E3B96C004DCBE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */; };
 		B1E6A21421E3B96D004DCBE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */; };
 		B1E6A21721E3B96D004DCBE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E6A21521E3B96D004DCBE2 /* LaunchScreen.storyboard */; };
@@ -48,6 +51,9 @@
 		B1C3830621E61B2700083026 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		B1C3830821E629DA00083026 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		B1C3830A21E62E3600083026 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		B1C3831421E6685900083026 /* FindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
+		B1C3831521E6685900083026 /* FindTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindTableViewCell.xib; sourceTree = "<group>"; };
+		B1C3831821E66BD900083026 /* MusixMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixMatchModel.swift; sourceTree = "<group>"; };
 		B1E6A20921E3B96C004DCBE2 /* FemaleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FemaleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +104,79 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B1C3830C21E6677700083026 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3831321E6683C00083026 /* Cell */,
+				B1C3830621E61B2700083026 /* FindViewController.swift */,
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		B1C3830D21E6679800083026 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3830421E619D300083026 /* WishlistTableViewController.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		B1C3830E21E667BB00083026 /* CreateEvent */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3830A21E62E3600083026 /* CreateViewController.swift */,
+			);
+			path = CreateEvent;
+			sourceTree = "<group>";
+		};
+		B1C3830F21E667CB00083026 /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3830821E629DA00083026 /* CalenderViewController.swift */,
+			);
+			path = Calender;
+			sourceTree = "<group>";
+		};
+		B1C3831021E667E900083026 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3830021E5CEEB00083026 /* HomeViewController.swift */,
+				B1C3830C21E6677700083026 /* Find */,
+				B1C3830D21E6679800083026 /* Wishlist */,
+				B1C3830F21E667CB00083026 /* Calender */,
+				B1C3830E21E667BB00083026 /* CreateEvent */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B1C3831121E6680200083026 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */,
+				B17EADCB21E4821C00F2FE01 /* ViewController.swift */,
+				B17EADCC21E4821C00F2FE01 /* ViewController.xib */,
+				B1C3831021E667E900083026 /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1C3831221E6681600083026 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3831821E66BD900083026 /* MusixMatchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B1C3831321E6683C00083026 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3831421E6685900083026 /* FindTableViewCell.swift */,
+				B1C3831521E6685900083026 /* FindTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B1E6A20021E3B96C004DCBE2 = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +200,8 @@
 		B1E6A20B21E3B96C004DCBE2 /* FemaleMusic */ = {
 			isa = PBXGroup;
 			children = (
-				B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */,
-				B17EADCB21E4821C00F2FE01 /* ViewController.swift */,
-				B17EADCC21E4821C00F2FE01 /* ViewController.xib */,
-				B1C3830021E5CEEB00083026 /* HomeViewController.swift */,
-				B1C3830621E61B2700083026 /* FindViewController.swift */,
-				B1C3830421E619D300083026 /* WishlistTableViewController.swift */,
-				B1C3830821E629DA00083026 /* CalenderViewController.swift */,
-				B1C3830A21E62E3600083026 /* CreateViewController.swift */,
+				B1C3831221E6681600083026 /* Model */,
+				B1C3831121E6680200083026 /* View */,
 				B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */,
 				B1E6A21521E3B96D004DCBE2 /* LaunchScreen.storyboard */,
 				B1E6A21821E3B96D004DCBE2 /* Info.plist */,
@@ -234,6 +307,7 @@
 				B1E6A21721E3B96D004DCBE2 /* LaunchScreen.storyboard in Resources */,
 				B1C382FF21E5C12600083026 /* GoogleService-Info.plist in Resources */,
 				B17EADCE21E4821C00F2FE01 /* ViewController.xib in Resources */,
+				B1C3831721E6685900083026 /* FindTableViewCell.xib in Resources */,
 				B1E6A21421E3B96D004DCBE2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +421,9 @@
 				B17EADCD21E4821C00F2FE01 /* ViewController.swift in Sources */,
 				B1E6A20D21E3B96C004DCBE2 /* AppDelegate.swift in Sources */,
 				B1C3830521E619D300083026 /* WishlistTableViewController.swift in Sources */,
+				B1C3831621E6685900083026 /* FindTableViewCell.swift in Sources */,
 				B1C3830221E5CEEB00083026 /* HomeViewController.swift in Sources */,
+				B1C3831921E66BD900083026 /* MusixMatchModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
