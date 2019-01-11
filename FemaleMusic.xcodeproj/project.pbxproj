@@ -18,8 +18,9 @@
 		B1C3830921E629DA00083026 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830821E629DA00083026 /* CalenderViewController.swift */; };
 		B1C3830B21E62E3600083026 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830A21E62E3600083026 /* CreateViewController.swift */; };
 		B1C3831621E6685900083026 /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3831421E6685900083026 /* FindTableViewCell.swift */; };
-		B1C3831721E6685900083026 /* FindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C3831521E6685900083026 /* FindTableViewCell.xib */; };
 		B1C3831921E66BD900083026 /* MusixMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3831821E66BD900083026 /* MusixMatchModel.swift */; };
+		B1E0E1B721E855DE0029D5DB /* TrackListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0E1B621E855DE0029D5DB /* TrackListModel.swift */; };
+		B1E0E1B921E865C40029D5DB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0E1B821E865C40029D5DB /* Constant.swift */; };
 		B1E6A20D21E3B96C004DCBE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */; };
 		B1E6A21421E3B96D004DCBE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */; };
 		B1E6A21721E3B96D004DCBE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E6A21521E3B96D004DCBE2 /* LaunchScreen.storyboard */; };
@@ -52,8 +53,9 @@
 		B1C3830821E629DA00083026 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		B1C3830A21E62E3600083026 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		B1C3831421E6685900083026 /* FindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
-		B1C3831521E6685900083026 /* FindTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindTableViewCell.xib; sourceTree = "<group>"; };
 		B1C3831821E66BD900083026 /* MusixMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixMatchModel.swift; sourceTree = "<group>"; };
+		B1E0E1B621E855DE0029D5DB /* TrackListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListModel.swift; sourceTree = "<group>"; };
+		B1E0E1B821E865C40029D5DB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B1E6A20921E3B96C004DCBE2 /* FemaleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FemaleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 				500CC914AFD35E15AB0DA731 /* Pods_FemaleMusicTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B10A548221E769BA000760B3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B1E0E1B821E865C40029D5DB /* Constant.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		B1C3830C21E6677700083026 /* Find */ = {
@@ -163,7 +173,7 @@
 		B1C3831221E6681600083026 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B1C3831821E66BD900083026 /* MusixMatchModel.swift */,
+				B1E0E1B521E855C80029D5DB /* MusixMatch */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,9 +182,17 @@
 			isa = PBXGroup;
 			children = (
 				B1C3831421E6685900083026 /* FindTableViewCell.swift */,
-				B1C3831521E6685900083026 /* FindTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B1E0E1B521E855C80029D5DB /* MusixMatch */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3831821E66BD900083026 /* MusixMatchModel.swift */,
+				B1E0E1B621E855DE0029D5DB /* TrackListModel.swift */,
+			);
+			path = MusixMatch;
 			sourceTree = "<group>";
 		};
 		B1E6A20021E3B96C004DCBE2 = {
@@ -202,6 +220,7 @@
 			children = (
 				B1C3831221E6681600083026 /* Model */,
 				B1C3831121E6680200083026 /* View */,
+				B10A548221E769BA000760B3 /* Utility */,
 				B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */,
 				B1E6A21521E3B96D004DCBE2 /* LaunchScreen.storyboard */,
 				B1E6A21821E3B96D004DCBE2 /* Info.plist */,
@@ -307,7 +326,6 @@
 				B1E6A21721E3B96D004DCBE2 /* LaunchScreen.storyboard in Resources */,
 				B1C382FF21E5C12600083026 /* GoogleService-Info.plist in Resources */,
 				B17EADCE21E4821C00F2FE01 /* ViewController.xib in Resources */,
-				B1C3831721E6685900083026 /* FindTableViewCell.xib in Resources */,
 				B1E6A21421E3B96D004DCBE2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +442,8 @@
 				B1C3831621E6685900083026 /* FindTableViewCell.swift in Sources */,
 				B1C3830221E5CEEB00083026 /* HomeViewController.swift in Sources */,
 				B1C3831921E66BD900083026 /* MusixMatchModel.swift in Sources */,
+				B1E0E1B721E855DE0029D5DB /* TrackListModel.swift in Sources */,
+				B1E0E1B921E865C40029D5DB /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

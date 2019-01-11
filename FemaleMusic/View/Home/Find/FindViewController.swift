@@ -10,19 +10,8 @@ import UIKit
 
 class FindViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating  {
 
-    var musixMatch: MusixMatchModel?
-    struct Cake {
-        var name = String()
-        var size = String()
-    }
-    
-    var cakes = [Cake(name: "Red Velvet", size: "Small"),
-                 Cake(name: "Brownie", size: "Medium"),
-                 Cake(name: "Bannna Bread", size: "Large"),
-                 Cake(name: "Vanilla", size: "Small"),
-                 Cake(name: "Minty", size: "Medium")]
-    
-    var filteredCakes = [Cake]()
+    var trackListModel = [TrackListModel]()
+    var filterTrackListModel = [TrackListModel]()
     
     lazy var tableView: UITableView! = {
         let table = UITableView()
@@ -37,6 +26,7 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
         search.dimsBackgroundDuringPresentation = false
+        search.searchBar.translatesAutoresizingMaskIntoConstraints = false
         return search
     }()
 
@@ -45,34 +35,41 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.backgroundColor = UIColor.white
         self.title = "Find"
         
-//        filteredCakes = cakes
         definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
-        self.tableView.register(FindTableViewCell.self, forCellReuseIdentifier: "findCell")
-        
+//        self.tableView.register(FindTableViewCell.self, forCellReuseIdentifier: "findTableViewCell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
         getData(artist: "")
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         view.addSubview(tableView)
+        view.addSubview(searchController.searchBar)
         setupLayout()
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
+            searchController.searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            searchController.searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            searchController.searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchController.searchBar.bottomAnchor.constraint(equalTo: tableView.topAnchor),
+            
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
     
     func getData(artist:String) {
-        let urlString = String("https://api.musixmatch.com/ws/1.1/track.search?apikey=4f7549e47cbd524ddda8f7ca760b4277&q_artist="+artist+"&page_size=15")
         
-        guard let url = URL(string: urlString) else { return }
+        let urlComps = NSURLComponents(string: TRACK_SEARCH_URL)!
+        let queryItems = [NSURLQueryItem(name: "apikey", value: "4f7549e47cbd524ddda8f7ca760b4277"), NSURLQueryItem(name: "q_artist", value: artist), NSURLQueryItem(name: "page_size", value: "15")]
+        urlComps.queryItems = queryItems as [URLQueryItem]
         
+        guard let url = urlComps.url else { return }
+
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
@@ -80,16 +77,16 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             guard let jsonData = data else { return }
             do {
-                let musixMatchModel = try JSONDecoder().decode(MusixMatchModel.self, from: jsonData)
-                
+                let musixMatchData = try JSONDecoder().decode(MusixMatchModel.self, from: jsonData)
                 //Get back to the main queue
                 DispatchQueue.main.async {
-                    self.musixMatch = musixMatchModel
+//                    print(musixMatchData.message.body.trackList)
+                    self.trackListModel = musixMatchData.message.body.trackListModel
                     self.tableView?.reloadData()
                 }
                 
             } catch let jsonError {
-                print(jsonError)
+                print("Error: \(jsonError)")
             }
             
             }.resume()
@@ -97,19 +94,16 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        // If we haven't typed anything into the search bar then do not filter the results
-        if searchController.searchBar.text! == "" {
-            filteredCakes = cakes
-        } else {
-            // Filter the results
-            filteredCakes = cakes.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+        if searchController.searchBar.text! != "" {
+            self.trackListModel.removeAll()
+            getData(artist: searchController.searchBar.text!.lowercased())
         }
         
         self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return musixMatch?.message.body.trackList.count ?? 0
+        return trackListModel.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -117,11 +111,15 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "findCell", for: indexPath) as! FindTableViewCell
         
-        cell.track = musixMatch?.message.body.trackList[indexPath.row].track ?? nil
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "findTableViewCell", for: indexPath) as! FindTableViewCell
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "cell")
+        
+        cell.textLabel?.text = trackListModel[indexPath.row].track.trackName
+        cell.detailTextLabel?.text = String(trackListModel[indexPath.row].track.artistName)
         
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

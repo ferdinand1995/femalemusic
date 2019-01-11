@@ -9,31 +9,60 @@
 import UIKit
 
 class FindTableViewCell: UITableViewCell {
+    
+     var productNameLabel : UILabel = {
+            let lbl = UILabel()
+            lbl.textColor = .black
+            lbl.font = UIFont.boldSystemFont(ofSize: 16)
+            lbl.textAlignment = .left
+            return lbl
+        }()
+        
+        
+        private let productDescriptionLabel : UILabel = {
+            let lbl = UILabel()
+            lbl.textColor = .black
+            lbl.font = UIFont.systemFont(ofSize: 16)
+            lbl.textAlignment = .left
+            lbl.numberOfLines = 0
+            return lbl
+        }()
+    
+        var productQuantity : UILabel =  {
+            let label = UILabel()
+            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.textAlignment = .left
+            label.text = "1"
+            label.textColor = .black
+            return label
+            
+        }()
+        
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+            super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    @IBOutlet weak var trackSong: UILabel!
-    @IBOutlet weak var wishlistButton: UIButton!
-    @IBOutlet weak var idSong: UILabel!
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+        }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        addSubview(productNameLabel)
+        addSubview(productDescriptionLabel)
+        
+        addSubview(productQuantity)
+        productNameLabel.anchor(top: topAnchor, left: rightAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
     }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
     
-    var track: Track?{
+    
+    var trackItem: TrackListModel?{
         didSet{
-            trackSong.text = track?.trackName
-            guard let trackID = track?.trackID else { return }
-            idSong.text = String(trackID)
+            productNameLabel.text = trackItem?.track.trackName
+            guard let trackID = trackItem?.track.trackID else { return }
+            productQuantity.text = String(trackID)
         }
     }
     
