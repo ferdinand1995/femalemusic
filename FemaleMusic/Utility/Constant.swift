@@ -12,4 +12,7 @@ let BASE_URL: String = "https://api.musixmatch.com/ws/1.1"
 
 let TRACK_SEARCH_URL: String = BASE_URL + "/track.search"
 
+let API_KEY: String = "4f7549e47cbd524ddda8f7ca760b4277"
+
+
 

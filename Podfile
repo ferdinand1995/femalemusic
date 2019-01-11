@@ -6,12 +6,9 @@ target 'FemaleMusic' do
   use_frameworks!
 
   # Pods for FemaleMusic
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
   pod 'RealmSwift'
-  pod 'MaterialComponents/BottomNavigation'
-
+  pod 'MaterialComponents/ActivityIndicator'
+  
   target 'FemaleMusicTests' do
     inherit! :search_paths
     # Pods for testing

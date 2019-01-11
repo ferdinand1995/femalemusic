@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialActivityIndicator
 
 class FindViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating  {
 
     var trackListModel = [TrackListModel]()
     var filterTrackListModel = [TrackListModel]()
     
+    //MARK: UIView Programatically
+
     lazy var tableView: UITableView! = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -30,14 +33,20 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
         return search
     }()
 
+    let activityIndicator: MDCActivityIndicator = {
+        let indicator = MDCActivityIndicator()
+        indicator.sizeToFit()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.cycleColors = [.blue, .red, .green, .yellow]
+        return indicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
         self.title = "Find"
         
         definesPresentationContext = true
-//        self.tableView.register(FindTableViewCell.self, forCellReuseIdentifier: "findTableViewCell")
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UINib(nibName: "FindTableViewCell", bundle: nil), forCellReuseIdentifier: "findTableViewCell")
 
         getData(artist: "")
     }
@@ -46,8 +55,11 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillLayoutSubviews()
         view.addSubview(tableView)
         view.addSubview(searchController.searchBar)
+        view.addSubview(activityIndicator)
         setupLayout()
     }
+    
+    //MARK: UIView Setup Constraint Safe Area
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
@@ -58,14 +70,22 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+
             ])
     }
     
+    //MARK: Networking for Request Data
+    
     func getData(artist:String) {
         
+        activityIndicator.startAnimating()
+        
         let urlComps = NSURLComponents(string: TRACK_SEARCH_URL)!
-        let queryItems = [NSURLQueryItem(name: "apikey", value: "4f7549e47cbd524ddda8f7ca760b4277"), NSURLQueryItem(name: "q_artist", value: artist), NSURLQueryItem(name: "page_size", value: "15")]
+        let queryItems = [NSURLQueryItem(name: "apikey", value: API_KEY), NSURLQueryItem(name: "q_artist", value: artist), NSURLQueryItem(name: "page_size", value: "15")]
         urlComps.queryItems = queryItems as [URLQueryItem]
         
         guard let url = urlComps.url else { return }
@@ -78,12 +98,13 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard let jsonData = data else { return }
             do {
                 let musixMatchData = try JSONDecoder().decode(MusixMatchModel.self, from: jsonData)
-                //Get back to the main queue
+
                 DispatchQueue.main.async {
-//                    print(musixMatchData.message.body.trackList)
                     self.trackListModel = musixMatchData.message.body.trackListModel
                     self.tableView?.reloadData()
                 }
+                
+                self.activityIndicator.stopAnimating()
                 
             } catch let jsonError {
                 print("Error: \(jsonError)")
@@ -93,15 +114,22 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    //MARK: Searching Datasource
+    
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text! != "" {
             self.trackListModel.removeAll()
             getData(artist: searchController.searchBar.text!.lowercased())
+        } else {
+            self.trackListModel.removeAll()
+            getData(artist: "")
         }
         
         self.tableView.reloadData()
     }
     
+    //MARK: TableView Datasource and Delegate
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trackListModel.count
     }
@@ -112,12 +140,9 @@ class FindViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "findTableViewCell", for: indexPath) as! FindTableViewCell
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "cell")
-        
-        cell.textLabel?.text = trackListModel[indexPath.row].track.trackName
-        cell.detailTextLabel?.text = String(trackListModel[indexPath.row].track.artistName)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "findTableViewCell", for: indexPath) as! FindTableViewCell
+
+        cell.trackList = trackListModel[indexPath.row]
         return cell
         
     }

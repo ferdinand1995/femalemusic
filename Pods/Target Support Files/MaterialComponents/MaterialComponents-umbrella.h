@@ -10,26 +10,12 @@
 #endif
 #endif
 
-#import "MaterialBottomNavigation.h"
-#import "MDCBottomNavigationBar.h"
-#import "MaterialInk.h"
-#import "MDCInkGestureRecognizer.h"
-#import "MDCInkTouchController.h"
-#import "MDCInkView.h"
-#import "MaterialShadowElevations.h"
-#import "MDCShadowElevations.h"
-#import "MaterialShadowLayer.h"
-#import "MDCShadowLayer.h"
-#import "MaterialTypography.h"
-#import "MDCFontTextStyle.h"
-#import "MDCTypography.h"
-#import "UIFont+MaterialSimpleEquality.h"
-#import "UIFont+MaterialTypography.h"
-#import "UIFontDescriptor+MaterialTypography.h"
+#import "MaterialActivityIndicator.h"
+#import "MDCActivityIndicator.h"
+#import "MaterialPalettes.h"
+#import "MDCPalettes.h"
 #import "MaterialApplication.h"
 #import "UIApplication+AppExtensions.h"
-#import "MaterialMath.h"
-#import "MDCMath.h"
 
 FOUNDATION_EXPORT double MaterialComponentsVersionNumber;
 FOUNDATION_EXPORT const unsigned char MaterialComponentsVersionString[];

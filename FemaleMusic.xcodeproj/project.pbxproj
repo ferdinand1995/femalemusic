@@ -9,18 +9,13 @@
 /* Begin PBXBuildFile section */
 		0250FEFA7622E24254202437 /* Pods_FemaleMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2E373A6713C5E11461CA26 /* Pods_FemaleMusic.framework */; };
 		6040ABA8226C65D2D26A34ED /* Pods_FemaleMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500CC914AFD35E15AB0DA731 /* Pods_FemaleMusicTests.framework */; };
-		B17EADCD21E4821C00F2FE01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17EADCB21E4821C00F2FE01 /* ViewController.swift */; };
-		B17EADCE21E4821C00F2FE01 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17EADCC21E4821C00F2FE01 /* ViewController.xib */; };
 		B1C382FF21E5C12600083026 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1C382FE21E5C12600083026 /* GoogleService-Info.plist */; };
-		B1C3830221E5CEEB00083026 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830021E5CEEB00083026 /* HomeViewController.swift */; };
-		B1C3830521E619D300083026 /* WishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830421E619D300083026 /* WishlistTableViewController.swift */; };
 		B1C3830721E61B2700083026 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830621E61B2700083026 /* FindViewController.swift */; };
-		B1C3830921E629DA00083026 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830821E629DA00083026 /* CalenderViewController.swift */; };
-		B1C3830B21E62E3600083026 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3830A21E62E3600083026 /* CreateViewController.swift */; };
-		B1C3831621E6685900083026 /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3831421E6685900083026 /* FindTableViewCell.swift */; };
 		B1C3831921E66BD900083026 /* MusixMatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3831821E66BD900083026 /* MusixMatchModel.swift */; };
 		B1E0E1B721E855DE0029D5DB /* TrackListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0E1B621E855DE0029D5DB /* TrackListModel.swift */; };
 		B1E0E1B921E865C40029D5DB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0E1B821E865C40029D5DB /* Constant.swift */; };
+		B1E0E1BE21E86FC10029D5DB /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E0E1BC21E86FC10029D5DB /* FindTableViewCell.swift */; };
+		B1E0E1BF21E86FC10029D5DB /* FindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1E0E1BD21E86FC10029D5DB /* FindTableViewCell.xib */; };
 		B1E6A20D21E3B96C004DCBE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */; };
 		B1E6A21421E3B96D004DCBE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */; };
 		B1E6A21721E3B96D004DCBE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E6A21521E3B96D004DCBE2 /* LaunchScreen.storyboard */; };
@@ -44,18 +39,13 @@
 		7CCF995B12D3DB9CE60FEE6A /* Pods-FemaleMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FemaleMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FemaleMusic/Pods-FemaleMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		9D53EBEDC75F0A935DA056B8 /* Pods-FemaleMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FemaleMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-FemaleMusic/Pods-FemaleMusic.release.xcconfig"; sourceTree = "<group>"; };
 		AE2E373A6713C5E11461CA26 /* Pods_FemaleMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FemaleMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B17EADCB21E4821C00F2FE01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B17EADCC21E4821C00F2FE01 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		B1C382FE21E5C12600083026 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B1C3830021E5CEEB00083026 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B1C3830421E619D300083026 /* WishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewController.swift; sourceTree = "<group>"; };
 		B1C3830621E61B2700083026 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
-		B1C3830821E629DA00083026 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
-		B1C3830A21E62E3600083026 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
-		B1C3831421E6685900083026 /* FindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
 		B1C3831821E66BD900083026 /* MusixMatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusixMatchModel.swift; sourceTree = "<group>"; };
 		B1E0E1B621E855DE0029D5DB /* TrackListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListModel.swift; sourceTree = "<group>"; };
 		B1E0E1B821E865C40029D5DB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B1E0E1BC21E86FC10029D5DB /* FindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
+		B1E0E1BD21E86FC10029D5DB /* FindTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindTableViewCell.xib; sourceTree = "<group>"; };
 		B1E6A20921E3B96C004DCBE2 /* FemaleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FemaleMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E6A21321E3B96D004DCBE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,38 +113,10 @@
 			path = Find;
 			sourceTree = "<group>";
 		};
-		B1C3830D21E6679800083026 /* Wishlist */ = {
-			isa = PBXGroup;
-			children = (
-				B1C3830421E619D300083026 /* WishlistTableViewController.swift */,
-			);
-			path = Wishlist;
-			sourceTree = "<group>";
-		};
-		B1C3830E21E667BB00083026 /* CreateEvent */ = {
-			isa = PBXGroup;
-			children = (
-				B1C3830A21E62E3600083026 /* CreateViewController.swift */,
-			);
-			path = CreateEvent;
-			sourceTree = "<group>";
-		};
-		B1C3830F21E667CB00083026 /* Calender */ = {
-			isa = PBXGroup;
-			children = (
-				B1C3830821E629DA00083026 /* CalenderViewController.swift */,
-			);
-			path = Calender;
-			sourceTree = "<group>";
-		};
 		B1C3831021E667E900083026 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B1C3830021E5CEEB00083026 /* HomeViewController.swift */,
 				B1C3830C21E6677700083026 /* Find */,
-				B1C3830D21E6679800083026 /* Wishlist */,
-				B1C3830F21E667CB00083026 /* Calender */,
-				B1C3830E21E667BB00083026 /* CreateEvent */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -163,8 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				B1E6A20C21E3B96C004DCBE2 /* AppDelegate.swift */,
-				B17EADCB21E4821C00F2FE01 /* ViewController.swift */,
-				B17EADCC21E4821C00F2FE01 /* ViewController.xib */,
 				B1C3831021E667E900083026 /* Home */,
 			);
 			path = View;
@@ -181,7 +141,8 @@
 		B1C3831321E6683C00083026 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				B1C3831421E6685900083026 /* FindTableViewCell.swift */,
+				B1E0E1BC21E86FC10029D5DB /* FindTableViewCell.swift */,
+				B1E0E1BD21E86FC10029D5DB /* FindTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -250,7 +211,6 @@
 				B1E6A20621E3B96C004DCBE2 /* Frameworks */,
 				B1E6A20721E3B96C004DCBE2 /* Resources */,
 				5158474C8B86B300C668CED3 /* [CP] Embed Pods Frameworks */,
-				61CD4DFA785A3FCD743178DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,7 +285,7 @@
 			files = (
 				B1E6A21721E3B96D004DCBE2 /* LaunchScreen.storyboard in Resources */,
 				B1C382FF21E5C12600083026 /* GoogleService-Info.plist in Resources */,
-				B17EADCE21E4821C00F2FE01 /* ViewController.xib in Resources */,
+				B1E0E1BF21E86FC10029D5DB /* FindTableViewCell.xib in Resources */,
 				B1E6A21421E3B96D004DCBE2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,47 +325,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FemaleMusic/Pods-FemaleMusic-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FemaleMusic/Pods-FemaleMusic-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		61CD4DFA785A3FCD743178DA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FemaleMusic/Pods-FemaleMusic-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FemaleMusic/Pods-FemaleMusic-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DD0800D0A4699E75210358FC /* [CP] Check Pods Manifest.lock */ = {
@@ -433,16 +371,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C3830921E629DA00083026 /* CalenderViewController.swift in Sources */,
 				B1C3830721E61B2700083026 /* FindViewController.swift in Sources */,
-				B1C3830B21E62E3600083026 /* CreateViewController.swift in Sources */,
-				B17EADCD21E4821C00F2FE01 /* ViewController.swift in Sources */,
 				B1E6A20D21E3B96C004DCBE2 /* AppDelegate.swift in Sources */,
-				B1C3830521E619D300083026 /* WishlistTableViewController.swift in Sources */,
-				B1C3831621E6685900083026 /* FindTableViewCell.swift in Sources */,
-				B1C3830221E5CEEB00083026 /* HomeViewController.swift in Sources */,
 				B1C3831921E66BD900083026 /* MusixMatchModel.swift in Sources */,
 				B1E0E1B721E855DE0029D5DB /* TrackListModel.swift in Sources */,
+				B1E0E1BE21E86FC10029D5DB /* FindTableViewCell.swift in Sources */,
 				B1E0E1B921E865C40029D5DB /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
